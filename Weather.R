@@ -8,14 +8,23 @@ library(ggplot2)
 
 plot(map)
 
+
 # Load the rgeos library
 install.packages("rgeos")
 library(rgeos)
 
-centers <- data.frame(gCentroid(map)) 
+#name all countries on map
+map2 <- as.data.frame(map)
+View(map2)
+
+#calculated coordinates of the centrepoints of all countries
+centers <- gCentroid(map, byid=TRUE)
+centers <-as.data.frame(centers)
 View(centers)
 
-
+#add country name to coordinates list
+centerpoints <- merge(map2, centers, all=TRUE )
+View(centerpoints)
 
 --------------------------------------------------------------------------
 
