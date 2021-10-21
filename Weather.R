@@ -1,6 +1,24 @@
+#downlaod shapefile and get gcentrate coordinates
+install.packages("rgdal")
+library(rgdal)
+map <- readOGR("World_Countries", layer="World_Countries")
+
+install.packages("ggplot2")
+library(ggplot2)
+
+ggplot(map)
+
+#gcentrate function unknow
+
+
+--------------------------------------------------------------------------
+
+
+
 getwd()
 setwd("C:/Users/dalha001/OneDrive - WageningenUR/Supervision/MSC/Edith van Oostrom/R/Apples")
 
+--------------------------------------------------------------------------
 library(raster)
 
 raster
