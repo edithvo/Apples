@@ -1,4 +1,4 @@
-#downlaod shapefile and get gcentrate coordinates
+#downlaod shapefile and get gcentroid coordinates
 install.packages("rgdal")
 library(rgdal)
 map <- readOGR("World_Countries", layer="World_Countries")
@@ -6,9 +6,15 @@ map <- readOGR("World_Countries", layer="World_Countries")
 install.packages("ggplot2")
 library(ggplot2)
 
-ggplot(map)
+plot(map)
 
-#gcentrate function unknow
+# Load the rgeos library
+install.packages("rgeos")
+library(rgeos)
+
+centers <- data.frame(gCentroid(map)) 
+View(centers)
+
 
 
 --------------------------------------------------------------------------
